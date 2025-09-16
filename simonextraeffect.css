@@ -1,0 +1,130 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* Button Container */
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(2, 150px);
+  gap: 20px;
+}
+
+/* Simon Buttons */
+.btn {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  margin: 0.7rem;
+}
+
+/* Individual Button Colors */
+.red {
+  background: #e63946;
+}
+
+.yellow {
+  background: #ffd166;
+}
+
+.green {
+  background: #06d6a0;
+}
+
+.purple {
+  background: #6a4c93;
+}
+
+/* Flash Effects */
+.flash {
+  filter: brightness(1.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px white;
+}
+
+.userflash {
+  filter: brightness(1.8);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .btn-container {
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* Game Over Effect */
+body.game-over {
+  animation: flash-red 0.5s ease-in-out 3, shake 0.5s ease-in-out 1;
+}
+
+/* Background flashes red */
+@keyframes flash-red {
+  0%, 100% {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  }
+  50% {
+    background: #ff0000;
+  }
+}
+
+/* Shake effect */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
