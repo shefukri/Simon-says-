@@ -23,4 +23,4 @@ Players must repeat an ever-growing sequence of flashing colored buttons.
 
 ---
 
-## 📂 Project Structure  
+ 
